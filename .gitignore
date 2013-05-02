@@ -6,3 +6,4 @@
 *.zip
 *.swp
 target
+.idea
