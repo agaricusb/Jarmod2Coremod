@@ -37,7 +37,7 @@ public class Jarmod2Coremod implements IFMLLoadingPlugin {
      */
     @Override
     public String getSetupClass() {
-        return null;
+        return "agaricus.mods.Jarmod2Coremod.Scanner";
     }
 
     /*
@@ -46,4 +46,7 @@ public class Jarmod2Coremod implements IFMLLoadingPlugin {
     @Override
     public void injectData(Map<String, Object> data) {
     }
+
+
+
 }
