@@ -2,6 +2,7 @@ package agaricus.mods.Jarmod2Coremod;
 
 import com.google.common.io.ByteStreams;
 import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.relauncher.FMLRelauncher;
 import cpw.mods.fml.relauncher.IFMLCallHook;
 
 import java.io.DataInputStream;
@@ -33,6 +34,10 @@ public class Scanner implements IFMLCallHook {
     @Override
     public Void call() throws Exception {
         log("Jarmod2Coremod loading...");
+        if (!FMLRelauncher.side().equals("SERVER")) {
+            log("not on server, skipping load");
+            return null;
+        }
         //log(Level.INFO, "coremodLocation = "+coremodLocation);
 
         File root, jarmodsDir;
