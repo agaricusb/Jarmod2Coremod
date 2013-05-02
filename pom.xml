@@ -26,6 +26,7 @@
   </repositories>
 
   <build>
+   <finalName>AAA-Jarmod2Coremod-${project.version}</finalName>
    <resources>
     <resource>
      <directory>src/main/resources</directory>
