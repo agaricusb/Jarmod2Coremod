@@ -1,7 +1,7 @@
 Jarmod2Coremod - a coremod to load jarmods
 
 1. Install jarmod2coremod in "coremods"
-2. Place your jarmods in "jarmods"
+2. Place your jarmods in "jarmods" in "CLIENT" or "SERVER" subfolders, as appropriate
 3. Start Minecraft and see if your jarmods load
 
 Warning: experimental, may be buggy.
@@ -9,7 +9,7 @@ Warning: experimental, may be buggy.
 Important Notes:
 
 * Rename jarmod2coremod to begin with "AAA-" to load before other coremods, if needed
-* Rename the jarmods to control their loader, they will be sorted before loading
+* Rename the jarmods to control their loader, they will be sorted alphabetically before loading
 * If you have trouble, test by installing jarmods into the jar instead
 
 Compilation:

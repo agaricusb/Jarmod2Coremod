@@ -34,11 +34,6 @@ public class Scanner implements IFMLCallHook {
     @Override
     public Void call() throws Exception {
         log("Jarmod2Coremod loading...");
-        if (!FMLRelauncher.side().equals("SERVER")) {
-            log("not on server, skipping load");
-            return null;
-        }
-        //log(Level.INFO, "coremodLocation = "+coremodLocation);
 
         File root, jarmodsDir;
 
@@ -51,7 +46,9 @@ public class Scanner implements IFMLCallHook {
             root = new File(".").getCanonicalFile();
         }
 
-        jarmodsDir = new File(root.getCanonicalPath() + System.getProperty("file.separator") + "jarmods");
+        String sep = System.getProperty("file.separator");
+        String side = FMLRelauncher.side();
+        jarmodsDir = new File(root.getCanonicalPath() + sep + "jarmods" + sep + side);
         jarmodsDir.mkdirs();
 
         log("jarmod directory: " + jarmodsDir);
