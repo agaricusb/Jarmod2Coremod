@@ -1,0 +1,20 @@
+[
+{
+  "modid": "Jarmod2Coremod",
+  "name": "Jarmod2Coremod",
+  "description": "A coremod to load jarmods",
+  "version": "${project.version}",
+  "mcversion": "${minecraft.version}",
+  "url": "http://github.com/agaricusb/Jarmod2Coremod",
+  "updateUrl": "",
+  "authors": [
+    "agaricus"
+  ],
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  "mod_MinecraftForge"
+  ]
+}
+]

@@ -1,0 +1,8 @@
+*.class
+*.iml
+*.ipr
+*.iws
+*.jar
+*.zip
+*.swp
+target
