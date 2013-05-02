@@ -1,7 +1,6 @@
 package agaricus.mods.Jarmod2Coremod;
 
 import com.google.common.io.ByteStreams;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.relauncher.IFMLCallHook;
 
@@ -33,15 +32,6 @@ public class Scanner implements IFMLCallHook {
 
     @Override
     public Void call() throws Exception {
-        log("XXX loading");
-        log("XXX instance="+FMLCommonHandler.instance());
-        log("XXX side="+FMLCommonHandler.instance().getSide());
-        log("XXX side isServer="+FMLCommonHandler.instance().getSide().isServer());
-        if (!FMLCommonHandler.instance().getSide().isServer()) {
-            log("Jarmod2Coremod on non-server, skipping load"); // just use multimc
-            return null;
-        }
-
         log("Jarmod2Coremod loading...");
         //log(Level.INFO, "coremodLocation = "+coremodLocation);
 
