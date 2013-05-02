@@ -1,9 +1,11 @@
 package agaricus.mods.Jarmod2Coremod;
 
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.relauncher.IFMLCallHook;
 
 import java.io.File;
 import java.util.Map;
+import java.util.logging.Level;
 
 public class Scanner implements IFMLCallHook {
 
@@ -21,8 +23,24 @@ public class Scanner implements IFMLCallHook {
 
     @Override
     public Void call() throws Exception {
-        System.out.println("PRELOADING XXX");
-        System.out.println("coremodLocation = "+coremodLocation);
+        FMLLog.log(Level.INFO, "Jarmod2Coremod loading...");
+        //FMLLog.log(Level.INFO, "coremodLocation = "+coremodLocation);
+
+        File root, jarmodsDir;
+
+        if (coremodLocation != null) {
+            root = coremodLocation.getParentFile(); // root/coremods/us.jar -> root/coremods
+            if (root != null) {
+                root = root.getParentFile(); // root
+            }
+        } else {
+            root = new File(".").getCanonicalFile();
+        }
+
+        jarmodsDir = new File(root.getCanonicalPath() + System.getProperty("file.separator") + "jarmods");
+        jarmodsDir.mkdirs();
+
+        FMLLog.log(Level.INFO, "jarmod directory: " + jarmodsDir);
 
         System.exit(0); // for testing
         return null;
