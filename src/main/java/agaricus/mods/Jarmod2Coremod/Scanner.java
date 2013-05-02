@@ -66,7 +66,7 @@ public class Scanner implements IFMLCallHook {
 
         log("Preloaded "+JarmodTransformer.classes.size()+" classes");
 
-        System.exit(0); // for testing
+        //System.exit(0); // for testing
         return null;
     }
 
