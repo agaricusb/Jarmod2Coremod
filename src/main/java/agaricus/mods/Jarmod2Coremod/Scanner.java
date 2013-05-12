@@ -1,17 +1,13 @@
 package agaricus.mods.Jarmod2Coremod;
 
-import com.google.common.io.ByteStreams;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.relauncher.FMLRelauncher;
 import cpw.mods.fml.relauncher.IFMLCallHook;
 
 import java.io.DataInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
@@ -66,7 +62,7 @@ public class Scanner implements IFMLCallHook {
             }
         }
 
-        log("Preloaded "+JarmodTransformer.classes.size()+" classes");
+        log("Preloaded "+JarmodTransformer.size()+" classes");
 
         //System.exit(0); // for testing
         return null;
@@ -87,7 +83,7 @@ public class Scanner implements IFMLCallHook {
             DataInputStream dataInputStream = new DataInputStream(zipFile.getInputStream(entry));
             dataInputStream.readFully(bytes);
 
-            JarmodTransformer.classes.put(className, bytes);
+            JarmodTransformer.put(className, bytes, file.getName());
         }
     }
 }
