@@ -8,6 +8,7 @@ Important Notes:
 
 * Rename the jarmods to control their loader, they will be sorted alphabetically before loading
 * If you have trouble, test by installing jarmods into the jar instead
+* **Before reporting issues in Jarmod2Coremod, test the same jarmods installed normally, without Jarmod2Coremod -- Jarmod2Coremod does not and cannot add jarmod compatibility where there is none, it only eases jarmod installation**
 
 Compilation:
 
